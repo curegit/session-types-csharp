@@ -15,6 +15,8 @@ namespace TaraiProtocol
 
 			var client = protocol.ForkThread(ch1 =>
 			{
+				
+
 				var ch2 = ch1.Receive(out var x, out var y, out var z).CatchNewChannel(out var channelForCancel);
 
 				var waitForCancel = channelForCancel.ReceiveAsync(out Task futureCancel);
