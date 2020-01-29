@@ -88,6 +88,12 @@ namespace Session
 		{
 			return base.GetHashCode();
 		}
+
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		public new Type GetType()
+		{
+			return base.GetType();
+		}
 	}
 
 	public sealed class Session<S, E, P> : Session where S : SessionType where E : SessionStack where P : ProtocolType
